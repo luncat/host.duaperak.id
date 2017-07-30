@@ -1,0 +1,10 @@
+@{
+    ViewBag.Title = "Index";
+}
+ 
+<p>Enter a URL to shorten</p>
+@using(Html.BeginForm("ShortenURL", "Home", FormMethod.Post)) {
+    @Html.Label("URL: ")
+    @Html.TextBox("longurl", "", new { @maxlength = "255" })
+    <input type="submit" value="Submit" />
+}
