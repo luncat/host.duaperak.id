@@ -128,6 +128,10 @@ img.clippy {
   transform: translateY(50%)
 }
 button.btn:focus,button.btn:active{outline:0}
+  @media screen and (max-width:414px){.shortener-box amp-iframe{height:45px}
+}
+@media screen and (max-width:375px){.shortener-box amp-iframe{height:60px}
+}
 </style>
 
 <script>
@@ -150,7 +154,12 @@ function getQueryVariable(variable) {
 <div id='output'></div>
 <div class='clear'></div>
   </div>
- 
+ <b:if cond='data:blog.pageType == &quot;item&quot;'>
+<div class='shortener-box'>
+<amp-iframe frameborder='0' height='30' layout='responsive' sandbox='allow-scripts allow-same-origin allow-modals allow-popups' expr:src='&quot;https://host.duaperak.id/shortener/index.html?api=AIzaSyDhBYsMzKFu3gfi4vQkI8J3sZRMmjz2Nak&amp;url=&quot; + data:blog.canonicalUrl' width='747'>
+</amp-iframe>
+  </div>
+</b:if>
 
 <script>
 (function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = 'https://apis.google.com/js/client.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();
